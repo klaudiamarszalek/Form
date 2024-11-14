@@ -1,0 +1,14 @@
+﻿@model Form.Models.Dane
+@using (Html.BeginForm("Form", "Home", FormMethod.Post))
+{
+	@Html.ValidationSummary(false,  "", new {@class = "text-danger"})
+	<p>Imie: @Html.TextBoxFor(a => a.Imie)</p>
+	<p>Nazwisko: @Html.TextBoxFor(a => a.Nazwisko)</p>
+	<p>Email: @Html.TextBoxFor(a => a.Email)</p>
+	<p>Haslo: @Html.PasswordFor(a => a.Haslo)</p>
+	<p>Powtorz haslo: @Html.PasswordFor(a => a.Haslo2)</p>
+	<p>Numer telefonu: @Html.TextBoxFor(a => a.Telefon)</p>
+	<p>Wiek: @Html.TextBoxFor(a => a.Wiek)</p>
+	<select asp-for="Miasto" asp-items="Html.GetEnumSelectList<Dane.Miasta>()"></select>
+	<input type="submit" />
+}
